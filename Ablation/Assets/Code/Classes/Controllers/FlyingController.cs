@@ -62,14 +62,15 @@ class FlyingController : MonoBehaviour
     {
         switch (_InputType)
         {
-            case InputType.Mouse:
-                GetInput ("Mouse X", "Mouse Y");
+            case InputType.Joystick:
+                GetInputSmoothed ("Horizontal LS", "Vertical LS");
                 break;
+            
             case InputType.Keyboard:
                 GetInput ("Horizontal", "Vertical");
                 break;
-            case InputType.Joystick:
-                GetInputSmoothed ("Horizontal LS", "Vertical LS");
+            case InputType.Mouse:
+                GetInput ("Mouse X", "Mouse Y");
                 break;
         }
     }
@@ -150,6 +151,12 @@ class FlyingController : MonoBehaviour
 
     private void Move ()
     {
+        if (_Velocity == Vector3.zero)
+        {
+            _Rigidbody.position = _Rigidbody.position;
+            return;
+        }
+
         // Calculate the movement of our next position, applying frame smoothing.
         _Velocity = _Rigidbody.position + _Velocity * _Speed * Time.deltaTime;
 

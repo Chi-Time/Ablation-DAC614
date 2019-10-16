@@ -7,6 +7,9 @@ using UnityEngine;
 
 static class Signals
 {
+    public static event Action OnCharacterHit;
+    public static void HitCharacter () { OnCharacterHit?.Invoke (); }
+
     public static event Action<GameObject, GameObject> OnObstacleCollision;
     public static void ObstacleCollision (GameObject player, GameObject obstacle) { OnObstacleCollision?.Invoke (player, obstacle); }
 
