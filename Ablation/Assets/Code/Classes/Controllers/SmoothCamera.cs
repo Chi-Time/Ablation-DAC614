@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent (typeof (Camera))]
 public class SmoothCamera : MonoBehaviour
 {
-    [SerializeField] private float _DampTime = 0.15f;
+    [SerializeField] private float _DampTime = 0.05f;
     [SerializeField] private Vector3 _Distance = Vector3.zero;
     [SerializeField] private Transform _Target = null;
 
