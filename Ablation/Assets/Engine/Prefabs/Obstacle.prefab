@@ -123,8 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ForceRange:
-    Min: 250
-    Max: 350
+    Min: 300
+    Max: 400
+  _CullingPoint: -25
 --- !u!114 &3387498734309700789
 MonoBehaviour:
   m_ObjectHideFlags: 0
