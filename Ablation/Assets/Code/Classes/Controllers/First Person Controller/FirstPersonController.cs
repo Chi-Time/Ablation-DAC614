@@ -211,8 +211,8 @@ public class FirstPersonController : MonoBehaviour
     private void GetInput (out float speed)
     {
         // Read input
-        float horizontal = Input.GetAxis ("Horizontal");
-        float vertical = Input.GetAxis ("Vertical");
+        float horizontal = Input.GetAxis ("Horizontal LS");
+        float vertical = Input.GetAxis ("Vertical LS");
 
         bool waswalking = _IsWalking;
 

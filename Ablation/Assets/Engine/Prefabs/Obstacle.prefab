@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3022094195193972678}
   - component: {fileID: 3022094195193972677}
   - component: {fileID: 3387498734309700789}
+  - component: {fileID: 3158850922955739424}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -89,7 +90,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3022094195193972680}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -123,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ForceRange:
-    Min: 300
-    Max: 400
+    Min: 1000
+    Max: 1250
   _CullingPoint: -25
 --- !u!114 &3387498734309700789
 MonoBehaviour:
@@ -139,3 +140,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FadeLength: 2
+--- !u!114 &3158850922955739424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022094195193972680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcafee21fc5c1bd458ae30aa456d4ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelsType: 0
+  _BandType: 0
+  _PrintDelay: 2.5
+  _MinAmplitude: 1
+  _MaxAmplitude: 1.5
+  _RandomAmplitude: 0.49500877
+  _StartScale: {x: 1, y: 1, z: 1}
+  _Spectrum: {fileID: 0}

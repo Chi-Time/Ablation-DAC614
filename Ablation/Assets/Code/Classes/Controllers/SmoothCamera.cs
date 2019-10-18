@@ -18,6 +18,7 @@ public class SmoothCamera : MonoBehaviour
 
     private void Awake ()
     {
+        Time.timeScale = 1.0f;
         _Camera = GetComponent<Camera> ();
         _Transform = GetComponent<Transform> ();
     }

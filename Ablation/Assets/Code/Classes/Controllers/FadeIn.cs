@@ -13,8 +13,14 @@ class FadeIn : MonoBehaviour
 
     private Material[] _Materials = null;
 
+    void OnTimeEvent (float speedOFfset, Range forceOffset, Range spawnOffset, Range exposureOffset, float fadeTime)
+    {
+        _FadeLength = fadeTime;
+    }
+
     private void Awake ()
     {
+        Signals.OnTimeEvent += OnTimeEvent;
         var renderer = GetComponent<MeshRenderer> ();
         _Materials = renderer.materials;
     }
@@ -54,5 +60,11 @@ class FadeIn : MonoBehaviour
     private void OnDisable ()
     {
         StopAllCoroutines ();
+        
+    }
+
+    private void OnDestroy ()
+    {
+        Signals.OnTimeEvent -= OnTimeEvent;
     }
 }

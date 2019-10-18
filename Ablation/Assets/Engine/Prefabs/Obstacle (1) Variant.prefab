@@ -7,10 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3158850922955739424, guid: a8d39d8813c7be04ba94f1b7865dd0dc,
+        type: 3}
+      propertyPath: _MinAmplitude
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3158850922955739424, guid: a8d39d8813c7be04ba94f1b7865dd0dc,
+        type: 3}
+      propertyPath: _MaxAmplitude
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3022094195193972680, guid: a8d39d8813c7be04ba94f1b7865dd0dc,
         type: 3}
       propertyPath: m_Name
-      value: Obstacle (1)
+      value: Obstacle (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3022094195193972681, guid: a8d39d8813c7be04ba94f1b7865dd0dc,
         type: 3}

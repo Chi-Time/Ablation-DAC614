@@ -16,6 +16,21 @@ class SceneryPool : MonoBehaviour
 
     private Transform _CurrentSceneSet = null;
 
+    private void OnEnable ()
+    {
+        Signals.OnTimeEvent += OnTimeEvent;
+    }
+
+    void OnTimeEvent (float speedOFfset, Range forceOffset, Range spawnOffset, Range exposureOffset, float fadeTime)
+    {
+        _Speed = speedOFfset;
+    }
+
+    private void OnDisable ()
+    {
+        Signals.OnTimeEvent -= OnTimeEvent;
+    }
+
     private void Awake ()
     {
         _ScenerySetPool.Constructor ("Scenery Set Pool", "Scenery Set");
@@ -52,6 +67,6 @@ class SceneryPool : MonoBehaviour
             }
         }
 
-        Invoke ("SpawnScenerySet", 1.0f);
+        Invoke ("SpawnScenerySet", .1f);
     }
 }

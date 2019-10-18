@@ -10,7 +10,7 @@ class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag (_Tag))
         {
-            print ("Yee");
+            Signals.HitCharacter ();
         }
     }
 }

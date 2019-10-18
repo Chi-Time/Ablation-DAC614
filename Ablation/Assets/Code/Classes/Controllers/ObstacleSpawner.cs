@@ -2,6 +2,7 @@
 
 class ObstacleSpawner : MonoBehaviour
 {
+
     [Tooltip ("The min and max time an obstacle can take to spawn.")]
     [SerializeField] private Range _SpawnTimeRange = new Range (0.5f, 1.5f);
     [Tooltip ("The min and max positions an obstacle can spawn.")]
@@ -10,6 +11,21 @@ class ObstacleSpawner : MonoBehaviour
     [SerializeField] private float _ZSpawnPosition = 20f;
     [Tooltip ("The pool containing the various obstacles.")]
     [SerializeField] private Pool _ObstaclePool = new Pool ();
+
+    private void OnEnable ()
+    {
+        Signals.OnTimeEvent += OnTimeEvent;
+    }
+
+    void OnTimeEvent (float speedOFfset, Range forceOffset, Range spawnOffset, Range exposureOffset, float fadeTime)
+    {
+        _SpawnTimeRange = spawnOffset;
+    }
+
+    private void OnDisable ()
+    {
+        Signals.OnTimeEvent -= OnTimeEvent;
+    }
 
     private void Awake ()
     {

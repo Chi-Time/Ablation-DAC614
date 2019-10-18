@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3751025277609056822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902524213484424414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcafee21fc5c1bd458ae30aa456d4ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelsType: 0
+  _BandType: 0
+  _PrintDelay: 2.5
+  _MinAmplitude: 0.4
+  _MaxAmplitude: 0.5
+  _RandomAmplitude: 0.49500877
+  _StartScale: {x: 1, y: 1, z: 1}
+  _Spectrum: {fileID: 0}
 --- !u!1001 &5876809707996073357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 7468677177344901459, guid: 6a1e5c46fd866ce4b9d7f0833579e86b,
         type: 3}
       propertyPath: m_Name
-      value: Obstacle (3)
+      value: Obstacle (3) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7468677177344901458, guid: 6a1e5c46fd866ce4b9d7f0833579e86b,
         type: 3}
@@ -82,5 +102,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7205361809831673466, guid: 6a1e5c46fd866ce4b9d7f0833579e86b, type: 3}
+    - {fileID: 7314073218984859579, guid: 6a1e5c46fd866ce4b9d7f0833579e86b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a1e5c46fd866ce4b9d7f0833579e86b, type: 3}
+--- !u!1 &3902524213484424414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7468677177344901459, guid: 6a1e5c46fd866ce4b9d7f0833579e86b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5876809707996073357}
+  m_PrefabAsset: {fileID: 0}

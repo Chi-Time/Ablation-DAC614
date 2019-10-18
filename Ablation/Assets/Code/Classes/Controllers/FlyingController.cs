@@ -56,6 +56,8 @@ class FlyingController : MonoBehaviour
     private void Update ()
     {
         SelectInput ();
+        Move ();
+        Rotate ();
     }
 
     private void SelectInput ()
@@ -66,12 +68,12 @@ class FlyingController : MonoBehaviour
                 GetInputSmoothed ("Horizontal LS", "Vertical LS");
                 break;
             
-            case InputType.Keyboard:
-                GetInput ("Horizontal", "Vertical");
-                break;
-            case InputType.Mouse:
-                GetInput ("Mouse X", "Mouse Y");
-                break;
+            //case InputType.Keyboard:
+            //    GetInput ("Horizontal", "Vertical");
+            //    break;
+            //case InputType.Mouse:
+            //    GetInput ("Mouse X", "Mouse Y");
+            //    break;
         }
     }
 
@@ -145,8 +147,8 @@ class FlyingController : MonoBehaviour
 
     private void FixedUpdate ()
     {
-        Move ();
-        Rotate ();
+        //Move ();
+        //Rotate ();
     }
 
     private void Move ()
@@ -158,7 +160,7 @@ class FlyingController : MonoBehaviour
         }
 
         // Calculate the movement of our next position, applying frame smoothing.
-        _Velocity = _Rigidbody.position + _Velocity * _Speed * Time.deltaTime;
+        _Velocity = _Rigidbody.position + _Velocity * _Speed * Time.fixedDeltaTime;
 
         //Calculate the position clamps of our x and y positions.
         float xClamped = Mathf.Clamp (_Velocity.x, _XPositionRange.Min, _XPositionRange.Max);

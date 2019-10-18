@@ -1,5 +1,18 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
+struct TRange<T>
+{
+    public T Min;
+    public T Max;
+
+    public TRange (T min, T max)
+    {
+        Min = min;
+        Max = max;
+    }
+}
+
 /// <summary>Supports holding a range from minimum value to maximum value.</summary>
 [System.Serializable]
 struct Range
@@ -15,6 +28,26 @@ struct Range
     {
         Min = min;
         Max = max;
+    }
+
+    public static Range operator + (Range a, Range b)
+    {
+        return new Range (a.Min + b.Min, a.Max + b.Max);
+    }
+
+    public static Range operator - (Range a, Range b)
+    {
+        return new Range (a.Min - b.Min, a.Max - b.Max);
+    }
+
+    public static Range operator * (Range a, Range b)
+    {
+        return new Range (a.Min * b.Min, a.Max * b.Max);
+    }
+
+    public static Range operator / (Range a, Range b)
+    {
+        return new Range (a.Min / b.Min, a.Max / b.Max);
     }
 }
 

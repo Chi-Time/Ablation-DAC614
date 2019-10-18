@@ -26,6 +26,7 @@ class Obstacle : MonoBehaviour, IPoolable
 
     private void Awake ()
     {
+        Signals.OnTimeEvent += OnTimeEvent;
         GetComponent<Collider> ().isTrigger = true;
 
         _Rigidbody = GetComponent<Rigidbody> ();
@@ -45,6 +46,7 @@ class Obstacle : MonoBehaviour, IPoolable
     private void OnEnable ()
     {
         ApplyForce ();
+        
     }
 
     private void ApplyForce ()
@@ -62,5 +64,15 @@ class Obstacle : MonoBehaviour, IPoolable
     private void OnDisable ()
     {
         _Rigidbody.velocity = Vector3.zero;
+    }
+
+    private void OnDestroy ()
+    {
+        Signals.OnTimeEvent -= OnTimeEvent;
+    }
+
+    void OnTimeEvent (float speedOFfset, Range forceOffset, Range spawnOffset, Range exposureOffset, float fadeTime)
+    {
+        _ForceRange = forceOffset;
     }
 }
